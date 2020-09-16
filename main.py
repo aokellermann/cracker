@@ -33,6 +33,4 @@ if __name__ == '__main__':
                 dict_crypt = crypt.crypt(password_str, salt=salt_str).split('$')[3]
 
                 if user_hash_ascii == dict_crypt:
-                    print("{}: {}".format(str(usernames[i], encoding='ascii'), password_str))
-
-
+                    print("Found passwd for user {}: {}".format(str(usernames[i], encoding='ascii'), password_str))
