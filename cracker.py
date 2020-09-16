@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+
+# Copyright Antony Kellermann 2020
+# Usage: ./cracker <dictionary_file> <linux_password_file>
+
 import crypt
 import sys
 
