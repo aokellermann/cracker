@@ -12,12 +12,12 @@ if __name__ == '__main__':
         exit(1)
 
     with open(sys.argv[1], 'r') as f:
+        dictionary_file = bytes(f.read(), encoding='utf8').splitlines()
+
+    with open(sys.argv[2], 'r') as f:
         shadow_file = [line.split(b':') for line in bytes(f.read(), encoding='utf8').splitlines()]
         usernames = [entry[0] for entry in shadow_file]
         hash_data = [entry[1].split(b'$') for entry in shadow_file]
-
-    with open(sys.argv[2], 'r') as f:
-        dictionary_file = bytes(f.read(), encoding='utf8').splitlines()
 
     for i in range(len(usernames)):
         if len(hash_data[i]) == 4:
